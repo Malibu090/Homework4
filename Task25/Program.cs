@@ -3,13 +3,25 @@
 // 2, 4 -> 16
 
 Console.Clear();
-Console.Write("Введите A: ");
-int A = int.Parse(Console.ReadLine());
-Console.Write("Введите B: ");
-int B = int.Parse(Console.ReadLine());
-int result = 1;
-for (int i = 0; i < B; i++)
+
+int EnterNumber(string str)
 {
-    result *= A;
+    Console.Write(str);
+    int number = int.Parse(Console.ReadLine());
+    return number;
 }
-Console.WriteLine(A+" в степени " +B+ " равно " +result);    
+
+ int Degree(int A, int B)
+{
+    int composition = 1;
+    for (int i = 0; i < B; i++)
+    {
+    composition *= A;
+    }
+    return composition;
+}
+
+int A = EnterNumber("Введите A: ");
+int B = EnterNumber("Введите B: ");
+int result = Degree(A, B);
+Console.WriteLine(A + " в степени " + B + " равно " + result);
