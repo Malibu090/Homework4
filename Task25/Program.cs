@@ -11,12 +11,12 @@ int EnterNumber(string str)
     return number;
 }
 
- int Degree(int A, int B)
+int Degree(int A, int B)
 {
     int composition = 1;
     for (int i = 0; i < B; i++)
     {
-    composition *= A;
+        composition *= A;
     }
     return composition;
 }
@@ -24,4 +24,6 @@ int EnterNumber(string str)
 int A = EnterNumber("Введите A: ");
 int B = EnterNumber("Введите B: ");
 int result = Degree(A, B);
-Console.WriteLine(A + " в степени " + B + " равно " + result);
+if (B > 0) Console.WriteLine(A + " в степени " + B + " равно " + result);
+else if (B == 0) Console.WriteLine("Вы ввели ненатуральное число B! Но " + A + " в степени " + B + " равно 1");
+else Console.WriteLine("Вы ввели ненатуральное число B!");
